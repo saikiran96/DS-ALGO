@@ -30,6 +30,43 @@ class LinkedList {
         }
     }
 
+    reverse(){
+
+        let curr = this.head;
+        let prev = null;  // this becomes the reverse liked list
+        let next;
+
+        // 1st Iteration 
+        // 22 -> 3 -> 4 ->5 ->7 -> 9
+
+        // null   22   ->   3 ->   4 ->   5 ->7 -> 9
+        // prev   cur       next
+ 
+
+
+           
+            while(curr != null){
+                 // first save the next element before re-Assigning
+                 // null     22   ->   3 ->   4 ->   5 ->7 -> 9
+                // prev     cur      next
+                next = curr.next
+                curr.next = prev  // reversing happens here
+
+                // code for Next Iteration
+                 // null     22   ->   3 ->   4 ->   5 ->7 -> 9
+                // prev     cur      next 
+                // null <-22   ->   3 ->     4 ->   5 ->7 -> 9
+                 //      prev      cur       next
+                 
+                 prev = curr;
+                 curr = next;
+            }
+            
+            return prev
+        
+        
+    }
+
 
 }
 
